@@ -1,0 +1,141 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	margin-top: 50px;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+.serchBody {
+	max-width: 661px;
+	min-height: 763px;
+	margin: 0px auto;
+	background-color: #c4c4c4;
+	display: flex;
+	flex-direction: column;
+	padding: 62px 84px 72px 77px;
+
+	&__input {
+		max-width: 500px;
+		min-height: 61px;
+		font-size: 48px;
+	}
+}
+.addRepositories {
+	padding-bottom: 45px;
+}
+.addRepositories__repositorier {
+	display: flex;
+}
+.addRepositories__repositorier_name {
+	width: 100%;
+	min-height: 44px;
+	font-size: 30px;
+	background: #e3e3e3;
+	border: 2px solid #000000;
+	&:active {
+		background: #65cdf9;
+	}
+}
+.selectedRepositories {
+	margin: 0px auto;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #e27beb;
+		border: 1px solid #000000;
+		width: 503px;
+		padding: 8px 17px 8px 17px;
+	}
+	&__repositorier {
+		display: flex;
+		flex-direction: column;
+	}
+	&__close {
+		height: 38px;
+		width: 42px;
+		//background-color: #FA6900;
+		border-radius: 5px;
+		position: relative;
+		&:after {
+			position: absolute;
+			top: -30px;
+			content: "\274c"; /* use the hex value here... */
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+		}
+	}
+}
